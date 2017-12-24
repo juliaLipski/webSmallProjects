@@ -1,0 +1,54 @@
+<div class="container todo">
+    <div class="todoHd d-flex-colum justify-content-center align-items-center">
+        <h2 class="">What to do?</h2>
+
+        <div class="">
+            <button class="btn btn-primary addTodo" ng-click="$ctrl.addshowMess()">Add to List</button>
+        </div>
+    </div>
+    <!--<ul dnd-list="list">
+    <li ng-repeat="item in list"
+        dnd-draggable="item"
+        dnd-moved="list.splice($index, 1)"
+        dnd-effect-allowed="move"
+        dnd-selected="models.selected = item"
+        ng-class="{'selected': models.selected === item}"
+        >
+        {{item.label}}
+    </li>-->
+    <!--</ul>-->
+    <div class="card list" ng-repeat="story in $ctrl.storysTodo track by $index">
+        <div class="card-block">
+            <p class="card-title"><strong>Title</strong> : {{story.Title}}</p>
+            <div class="card-text"><strong>Description</strong> : {{story.Description}}</div>
+            <p class="card-text"><strong>Date</strong> : {{story.Date | date : format : timezone}}</p>
+            <button class="btn btn-warning" ng-click="$ctrl.edit()">Edit</button>
+            <button class="btn btn-danger" ng-click="$ctrl.deleteMesShow($index)">delete</button>
+            <button type="button" class="btn btn-success" ng-click="$ctrl.moveInpr(story,$index)">Move in progress</button>
+        </div>
+    </div>
+</div>
+<div ng-show="$ctrl.dilogAdd" class="noBody d-flex justify-content-center align-items-center">
+    <div class="dilog d-flex flex-column justify-content-around align-items-center">
+        <button type="button" class="close wh align-self-end" ng-click="$ctrl.close()" aria-label="Close">
+        <span aria-hidden="true" class="cl">&times;</span></button>
+        <div class="form-group">
+            <label for="Title">Title:</label>
+            <input name="Title" class="form-control" reqired type="text" placeholder="Title" ng-model="$ctrl.Title">
+            <label for="Description">Description:</label>
+            <textarea rows="6" cols="5" name="Description" class="form-control" reqired ng-model="$ctrl.Description"></textarea>
+            <label for="Date">Date:</label>
+            <input name="Date" type="date" class="form-control" reqired placeholder="Date" ng-model="$ctrl.Date">
+            <button class="btn btn-primary" ng-click="$ctrl.add()">Add</button>
+        </div>
+    </div>
+</div>
+<div ng-show="$ctrl.dilogDelete" class="noBody d-flex justify-content-center align-items-center">
+    <div class="dilog d-flex flex-column justify-content-around align-items-center">
+        <p>Delete action??</p>
+        <div>
+            <button type="button" class="btn btn-primary" ng-click="$ctrl.close()">close</button>
+            <button type="button" class="btn btn-danger" ng-click="$ctrl.delete()">delete</button>
+        </div>
+    </div>
+</div>

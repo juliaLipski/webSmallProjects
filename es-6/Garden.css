@@ -1,0 +1,23 @@
+body{
+    background-image: url('https://tegra3.net/uploads/posts/2013-02/thumbs/1359703505_screen_20130201_1121_3.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 120%;
+}
+#nav{
+    display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+	height: 80vh;
+}
+header{
+    height: 20vh;
+}
+.pl1{
+    width: 80px;
+}
+.pl2{
+    width: 100px;
+}
+button:hover{
+    background-color: lightblue;
+}

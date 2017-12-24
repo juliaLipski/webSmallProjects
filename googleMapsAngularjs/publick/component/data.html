@@ -1,0 +1,19 @@
+<h2>{{$ctrl.text}}</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Branch</th>
+            <th>City</th>
+            <th>Lat</th>
+            <th>Long</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in $ctrl.data" ng-init="$ctrl.initialize()">
+            <td>{{item.branch}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.lat}}</td>
+            <td>{{item.long}}</td>
+        </tr>
+    </tbody>
+</table>
